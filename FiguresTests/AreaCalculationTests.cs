@@ -31,7 +31,7 @@ namespace FiguresTests
         [TestMethod]
         public void CalculateIsoscelesTriangleArea()
         {
-            IFigure triangle = ObjectMother.CreateIsoscelesTriangle();
+            IFigure triangle = ObjectMother.CreateIsoscelesTriangleStartSides();
 
             double expected = 1;
             double actual = triangle.CalculateArea();

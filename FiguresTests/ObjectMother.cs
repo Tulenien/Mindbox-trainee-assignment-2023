@@ -30,11 +30,17 @@ namespace FiguresTests
             return new Triangle(a, b, c);
         }
 
-        public static IFigure CreateIsoscelesTriangle()
+        public static IFigure CreateIsoscelesTriangleStartSides()
         {
             // Area is 1
             double side = Math.Sqrt(2);
             return new Triangle(side, side, 2);
+        }
+
+        public static IFigure CreateIsoscelesTriangleEndSides()
+        {
+            double side = Math.Sqrt(2);
+            return new Triangle(2, side, side);
         }
 
         public static IFigure CreateEquilateralTriangle()
@@ -68,6 +74,21 @@ namespace FiguresTests
         public static IFigure CreateTriangleWithNegativeSide()
         {
             return new Triangle(-1, 2, 2);
+        }
+
+        public static IFigure CreateTriangleWithLongestSideAtIndex0()
+        {
+            return new Triangle(5, 3, 4);
+        }
+
+        public static IFigure CreateTriangleWithLongestSideAtIndex1()
+        {
+            return new Triangle(4, 5, 3);
+        }
+
+        public static IFigure CreateTriangleWithLongestSideAtIndex2()
+        {
+            return new Triangle(4, 3, 5);
         }
     }
 }
