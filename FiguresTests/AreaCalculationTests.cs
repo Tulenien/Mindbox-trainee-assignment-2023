@@ -9,12 +9,56 @@ namespace FiguresTests
         public void CalculateCircleArea()
         {
             double radius = 3;
-            IFigure circle = new Circle(radius);
+            IFigure circle = ObjectMother.CreateCircleWithRadius(radius);
 
             double expected = Math.PI * radius * radius;
             double actual = circle.CalculateArea();
 
             Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void CalculateTriagleArea()
+        {
+            IFigure triagle = ObjectMother.CreateRightTriagle();
+
+            double expected = 6;
+            double actual = triagle.CalculateArea();
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void CalculateIsoscelesTriangleArea()
+        {
+            IFigure triangle = ObjectMother.CreateIsoscelesTriangle();
+
+            double expected = 1;
+            double actual = triangle.CalculateArea();
+
+            Assert.AreEqual(expected, Math.Round(actual, 6));
+        }
+
+        [TestMethod]
+        public void CalculateEquilateralTriangleArea()
+        {
+            IFigure triangle = ObjectMother.CreateEquilateralTriangle();
+
+            double expected = 3;
+            double actual = triangle.CalculateArea();
+
+            Assert.AreEqual(expected, Math.Round(actual, 6));
+        }
+
+        [TestMethod]
+        public void CalculateObtuseTriangleArea()
+        {
+            IFigure triangle = ObjectMother.CreateObtuseTriangle();
+
+            double expected = 3 * Math.Sqrt(1767) * 0.25;
+            double actual = triangle.CalculateArea();
+
+            Assert.AreEqual(Math.Round(expected, 6), Math.Round(actual, 6));
         }
     }
 }

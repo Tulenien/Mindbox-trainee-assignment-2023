@@ -13,7 +13,8 @@
 
         private double CalculateSemiPerimeter(double a, double b, double c)
         {
-            return (a + b + c) / 2;
+            //return (a + b + c) / 2;
+            return (a + b + c) * 0.5;
         }
 
         private int GetIndexOfTheLongestSide()
