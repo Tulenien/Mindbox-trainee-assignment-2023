@@ -8,6 +8,17 @@ namespace FiguresTests
         {
             return new Circle(radius);
         }
+
+        public static IFigure CreateValidCircle()
+        {
+            return new Circle(1);
+        }
+
+        public static IFigure CreateInvalidCircle()
+        {
+            return new Circle(-1);
+        }
+
         public static IFigure CreateRightTriagle()
         {
             // Area is 6
@@ -37,6 +48,26 @@ namespace FiguresTests
         {
             // Area is approximately 31.5268
             return new Triangle(6, 11, 14);
+        }
+
+        public static IFigure CreateValidTriangle()
+        {
+            return new Triangle(2, 3, 2);
+        }
+
+        public static IFigure CreateInvalidTriangle()
+        {
+            return new Triangle(1, 1, 2);
+        }
+
+        public static IFigure CreateTriangleWithZeroSide()
+        {
+            return new Triangle(0, 1, 2);
+        }
+
+        public static IFigure CreateTriangleWithNegativeSide()
+        {
+            return new Triangle(-1, 2, 2);
         }
     }
 }

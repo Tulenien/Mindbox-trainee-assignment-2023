@@ -10,11 +10,23 @@ namespace Figures
     {
         private double _radius;
 
+        public bool CheckIfValid()
+        {
+            return _radius > 0;
+        }
+
         public Circle(double radius)
         {
             _radius = radius;
         }
 
-        public double CalculateArea() => Math.PI * _radius * _radius;
+        public double CalculateArea()
+        {
+            if (CheckIfValid())
+            {
+                return Math.PI* _radius *_radius;
+            }
+            return -1;
+        }
     }
 }

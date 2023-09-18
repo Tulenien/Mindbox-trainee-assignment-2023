@@ -13,7 +13,6 @@
 
         private double CalculateSemiPerimeter(double a, double b, double c)
         {
-            //return (a + b + c) / 2;
             return (a + b + c) * 0.5;
         }
 
@@ -95,20 +94,40 @@
             return 0.5 * a * b;
         }
 
+        public bool CheckIfValid()
+        {
+            double a = _sides[0];
+            double b = _sides[1];
+            double c = _sides[2];
+            if (a * b * c == 0)
+            {
+                return false;
+            }
+            else if (a < 0 || b < 0 || c < 0)
+            {
+                return false;
+            }
+            return (a + b > c) && (a + c > b) && (b + c > a);
+        }
+
         public double CalculateArea()
         {
-            if (CheckIfRight() != true)
+            if (CheckIfValid())
             {
-                double a = _sides[0];
-                double b = _sides[1];
-                double c = _sides[2];
-                double semiPerimeter = CalculateSemiPerimeter(a, b, c);
-                return Math.Sqrt(semiPerimeter * (semiPerimeter - a) * (semiPerimeter - b) * (semiPerimeter - c));
+                if (CheckIfRight() != true)
+                {
+                    double a = _sides[0];
+                    double b = _sides[1];
+                    double c = _sides[2];
+                    double semiPerimeter = CalculateSemiPerimeter(a, b, c);
+                    return Math.Sqrt(semiPerimeter * (semiPerimeter - a) * (semiPerimeter - b) * (semiPerimeter - c));
+                }
+                else
+                {
+                    return CalculateAreaOfRightTriangle();
+                }
             }
-            else
-            {
-                return CalculateAreaOfRightTriangle();
-            }
+            return -1;
         }
     }
 }
