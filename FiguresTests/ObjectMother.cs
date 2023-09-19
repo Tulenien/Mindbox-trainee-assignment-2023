@@ -25,6 +25,11 @@ namespace FiguresTests
             return new Triangle(3, 4, 5);
         }
 
+        public static IFigure CreateNotRightTriangle()
+        {
+            return new Triangle(3, 3, 4);
+        }
+
         public static IFigure CreateTriangleWithSides(double a, double b, double c)
         {
             return new Triangle(a, b, c);
