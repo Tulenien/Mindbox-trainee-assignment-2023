@@ -60,5 +60,27 @@ namespace FiguresTests
 
             Assert.AreEqual(Math.Round(expected, 6), Math.Round(actual, 6));
         }
+
+        [TestMethod]
+        public void CalculateInvalidTriangleAreaShouldReturnNegative1()
+        {
+            IFigure triangle = ObjectMother.CreateInvalidTriangle();
+
+            double expected = -1;
+            double actual = triangle.CalculateArea();
+
+            Assert.AreEqual(actual, expected);
+        }
+
+        [TestMethod]
+        public void CalculateInvalidCircleAreaShouldReturnNegative1()
+        {
+            IFigure circle = ObjectMother.CreateInvalidCircle();
+
+            double expected = -1;
+            double actual = circle.CalculateArea();
+
+            Assert.AreEqual(actual, expected);
+        }
     }
 }
