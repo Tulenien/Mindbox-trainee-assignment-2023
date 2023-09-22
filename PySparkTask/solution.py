@@ -9,5 +9,4 @@ class ProductCombinator:
             .groupby("Product")\
             .agg(collect_list("Category")\
             .alias("Categories"))
-        #result = result.na.fill("No category")
         return result
