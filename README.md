@@ -11,8 +11,8 @@
 - Вычисление площади фигуры без знания типа фигуры в compile-time
 - Проверку на то, является ли треугольник прямоугольным
 
-Была написана DLL [библиотека](https://github.com/Tulenien/Mindbox-trainee-assignment-2023/tree/develop/Figures) на языке C# для фреймворка .NET 6.0. 
-К ней были написаны unit тесты в отдельном [проекте](https://github.com/Tulenien/Mindbox-trainee-assignment-2023/tree/develop/FiguresTests). Все фигуры 
+Была написана DLL [библиотека](https://github.com/Tulenien/Mindbox-trainee-assignment-2023/tree/master/Figures) на языке C# для фреймворка .NET 6.0. 
+К ней были написаны unit тесты в отдельном [проекте](https://github.com/Tulenien/Mindbox-trainee-assignment-2023/tree/master/FiguresTests). Все фигуры 
 реализуют интерфейс `IFigure`, который содержит методы вычисления площади и валидацию фигуры.
 
 Метод валидации был добавлен для ограничения возможности ошибки в вычислении площади, если параметры фигуры заданы ошибочно. В случае, если фигура не 
@@ -33,11 +33,11 @@
 
 Первый содержит имя продукта и соответствующие ему категории. Для того чтобы присвоить несколько категорий, необходимо добавить имя продукта с 
 каждой новой категорией в данный датафрейм. Метод `getAllProductsAndCategories` в файле 
-[solution.py](https://github.com/Tulenien/Mindbox-trainee-assignment-2023/blob/develop/PySparkTask/solution.py). 
+[solution.py](https://github.com/Tulenien/Mindbox-trainee-assignment-2023/blob/master/PySparkTask/solution.py). 
 
 Второй датафрейм содержит названия всех категорий и их описаний.
 
 Изначально все поля заданы типом `StringType`. При объединении нескольких категорий у одного продукта, их тип меняется на список `ArrayType<StringType>`. 
 Если у продукта нет категорий или присвоенные ему категории пустые, то в его категориях будет пустой список.
 
-Для программы также были добавлены [юнит-тесты](https://github.com/Tulenien/Mindbox-trainee-assignment-2023/blob/develop/PySparkTask/tests.py).
+Для программы также были добавлены [юнит-тесты](https://github.com/Tulenien/Mindbox-trainee-assignment-2023/blob/master/PySparkTask/tests.py).
